@@ -6,9 +6,23 @@ const app = express();
 const admin = require('./routes/admin');
 const path = require("path");
 const mongoose = require('mongoose');
-
+const session = require("express-session");
+const flash = require("connect-flash");
 
 // Configs
+// Session
+app.use(session({
+    secret: "2hSwga23F3*d0:%'4Eg8|_5>I1*/ZG!N",
+    resave: true,
+    saveUninitialized: true
+}))
+app.use(flash());
+// Middleware
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash("success_msg");
+    res.locals.error_msg = req.flash("error_msg")
+    next();
+})
 // Body Parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
