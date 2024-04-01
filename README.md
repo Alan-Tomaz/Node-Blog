@@ -1,6 +1,6 @@
 # Node Blog
 
-## A Simple Blog developed with NodeJS and Vanilla JavaScript.
+## A Simple Blog developed with NodeJS, MongoDB and Vanilla JavaScript.
 
 ![Initial Page](https://i.imgur.com/PwwveFI.png)
 
