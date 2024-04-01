@@ -1,0 +1,34 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to Node Blog</h1>
+  <p class="lead">This is a simple blog, developed with Node JS wit Express, MongoDB, Vanilla JavaScript, HTML and Bootstrap</p>
+  <hr class="my-4">
+  <p>Check it Out</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="users/register" role="button">Register account</a>
+  </p>
+</div>
+
+<hr>
+
+<h2>Recents Posts</h2>
+
+{{#each posts}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <a href="/post/{{slug}}"><button class="btn btn-success">Read More</button></a>
+        <hr>
+        <small>Category: {{category.name}}</small>
+        <br>
+        <small>Publication Date: {{date}}</small>
+    </div>
+    </div>
+{{else}}
+<h5>No posts registered</h5>
+{{/each}}
+{{/each}}

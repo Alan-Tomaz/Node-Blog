@@ -20,7 +20,7 @@ const Post = new Schema({
     },
     category: {
         type: Schema.Types.ObjectId,
-        ref: 'categorias',
+        ref: 'categories',
         required: true
     },
     date: {

@@ -1,0 +1,21 @@
+<h2>Users List:</h2>
+<hr>
+<a href="/users/register"><button class="btn btn-success">New User</button></a>
+
+{{#each users}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h4>{{username}}</h4>
+        <p>Email: {{email}}</p>
+        {{#if isAdmin}}
+        <small>Administrator: Yes</small>
+    {{else}}
+<small>Administrator: No</small>
+    {{/if}}
+        <hr>
+        <a href="/admin/users/edit/{{_id}}"><button class="btn btn-success mt-3">Edit User</button></a>
+    </div>
+</div>
+{{else}}
+<p>No users registered</p>
+{{/each}}

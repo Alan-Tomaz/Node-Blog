@@ -1,0 +1,32 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+<h3>Edit User:</h3>
+<div class="card">
+    <div class="card-body">
+<form action="/admin/users/edit" method="POST">
+<input type="hidden" name="id" id="id" value="{{theUser._id}}">
+    <label for="title">Username: </label>
+    <input type="text" id="usename" name="username" placeholder="Username" class="form-control" value="{{theUser.username}}">
+    <label for="slug">Email: </label>
+    <input type="email" id="email" name="email" placeholder="User Email" class="form-control" value="{{theUser.email}}">
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password" placeholder="User Password" class="form-control">
+    <label for="password_2">Rewrite Your Password: </label>
+    <input type="password" id="password_2" name="password_2" placeholder="Rewrite Your Password" class="form-control">
+    <label for="isAdmin">Administrator: </label>
+    <select name="isAdmin" id="isAdmin" class="form-control">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+    </select>
+    <br>
+    <button type="submit" class="btn btn-success">Edit User</button>
+</form>
+<form action="/admin/users/delete" method="POST">
+<input type="hidden" name="id" id="id" value="{{theUser._id}}">
+    <button type="submit" class="btn btn-danger mt-2">Delete User</button>
+</form>
+</div>  
+</div>
