@@ -1,4 +1,4 @@
-# Node Blog
+# NodeJS Blog
 
 ## A Simple Blog developed with NodeJS, MongoDB and Vanilla JavaScript.
 
